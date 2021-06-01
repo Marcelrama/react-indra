@@ -22,6 +22,10 @@ const validations: any = {
   },
 };
 
+/**
+ * Form components para agrupar la logica de los formularios
+ */
+
 export default class Form extends Component {
   state: any = {
     fields: {},
@@ -91,11 +95,7 @@ export default class Form extends Component {
 
   validateField = (id: string) => {
     let error = "";
-    
-    console.log("*********************");
-    console.log(this.state.errors);
-    console.log("*********************");
-    
+
     const {
       value: fieldValue,
       validate,

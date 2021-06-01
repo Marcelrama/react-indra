@@ -1,4 +1,5 @@
 import React from "react";
+import InputText from "../Input-text/InputText";
 import "./InputTextSelect.scss";
 
 const InputTextSelect = (props: any) => {
@@ -20,11 +21,13 @@ const InputTextSelect = (props: any) => {
           <a className="dropdown-item">CE</a>
         </div>
       </div>
-      <input
+
+      <InputText
+        id="props.label"
         type="text"
-        className="form-control"
-        aria-label={props.label}
-      ></input>
+        validate="numeric"
+        placeholder=" "
+      />
     </div>
   );
 };
