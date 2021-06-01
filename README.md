@@ -19,4 +19,10 @@
 	- Views: Vistas de cada pantalla.
 
 
+## Librerías
+-  sass: para usar el preoprocesador sass.
+- bootstrap: para la maquetación.
+- font-awesome: Para obtener los iconos.
+
+
 
