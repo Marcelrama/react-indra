@@ -1,0 +1,25 @@
+@import "./colores";
+@import "./estilos-fuentes";
+
+/* Fuentes */
+@mixin styleRoboto($size, $weight, $lheight) {
+  font-family: 'Roboto', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lheight;
+}
+
+@mixin styleLato($size, $weight, $lheight) {
+  font-family: 'Lato', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lheight;
+}
+
+@mixin flex($align, $justify, $wrap, $direction) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+}

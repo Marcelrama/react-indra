@@ -1,0 +1,44 @@
+@import "../../styles/colores.scss";
+@import "../../styles/mixins";
+
+.input--text--field {
+  border: 1px solid #c5cbe0;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  input {
+    @include styleLato(16px, 400, 24px);
+    border: none;
+    // border-radius: 4px;
+    color: $Gray-3;
+    padding: 16px;
+    width: 100%;
+    &::placeholder {
+      color: $Gray-3;
+    }
+    &:focus {
+      outline: none !important;
+      border: 1px;
+      // border-style: solid;
+      border-color: $Gray-3;
+      color: $Gray-3;
+    }
+    &[type="checkbox" i] {
+      background-color: transparent;
+      border: none;
+    }
+  }
+}
+
+.input--text--error {
+  color: $color-rojo;
+}
+
+
+input ~ label {
+  @include styleLato(14px, 300, 20px);
+  color: $Gray_2_Paragraph;
+  a {
+    color: $Gray_2_Paragraph;
+    text-decoration: underline;
+  }
+}

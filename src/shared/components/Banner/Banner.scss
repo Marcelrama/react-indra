@@ -1,0 +1,124 @@
+@import "../../styles/colores";
+@import "../../styles/estilos-fuentes";
+
+$path-img-movil: "../../assets/svg" !default;
+
+
+@mixin styleRobot($size, $weight, $lheight) {
+  font-family: 'Roboto', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lheight;
+}
+
+@mixin styleLato($size, $weight, $lheight) {
+  font-family: 'Lato', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lheight;
+}
+
+@mixin flex($align, $justify, $wrap, $direction) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+}
+
+.banner {
+  height: 100%;
+  width: 100%;
+  background-color: #F7F8FC;
+  background-image: url("../../../shared/assets/svg/background-init-page.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 536px;
+  padding: 40px 0;
+  @include flex(center, flex-end, wrap, column);
+  &--content {
+    @include flex(center, flex-end, initial, column);
+    height: 90%;
+    margin-left: 22.4%;
+    max-width: 320px;
+    padding-left: 20px;
+  }
+  &--image {
+    display: block;
+    max-width: 320px;
+    width: 100%;
+    &--d {
+      display: block;
+      width: 100%;
+    }
+    &--m {
+      display: none;
+    }
+  }
+  &--text {
+    margin-top: 24px;
+    margin-bottom: 100px;
+    h5 {
+      color: $Gray_1_Titulos;
+      @include styleLato(12px, 700, 16px);
+    }
+    h1 {
+      color: $Gray_1_Titulos;
+      @include styleLato(36px, 400, 48px);
+      span {
+        color: $Red-1-Rimac;
+      }
+    }
+    h6 {
+      color: $Gray_2_Paragraph;
+      @include styleRobot(14px, 400, 24px);
+    }
+  }
+  &--copy {
+    p {
+      color: $Gray-3;
+      @include styleRobot(12px, 300, 20px);
+      margin: 0;
+    }
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 40em) {
+  .banner {
+    background-image: initial;
+    padding: 0;
+    &--content {
+      @include flex(center, space-between, wrap, row-reverse);
+      margin: 0 0 0 32px;
+      padding-left: 0;
+      width: calc(100% - 32px);
+      max-width: initial;
+    }
+    &--image {
+      max-width: 112px;
+      &--d {
+        display: none;
+      }
+      &--m {
+        display: block;
+        margin: 0 0 0 auto;
+      }
+    }
+    &--text {
+      margin-bottom: initial;
+      max-width: 210px;
+      h1 {
+        @include styleLato(28px, 400, 36px);
+        .bicolor {
+          color: $Gray_1_Titulos;
+        }
+      }
+    }
+    &--copy {
+      display: none;
+    }
+  }
+}

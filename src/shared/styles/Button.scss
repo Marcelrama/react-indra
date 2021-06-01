@@ -1,0 +1,17 @@
+@import './colores';
+@import './Roboto';
+@import "./mixins";
+
+button {
+    @include styleLato(14px, 700, 16px);
+    background: $Red-1-Rimac;
+    border-radius: 8px;
+    border: 1px solid $Red-1-Rimac;
+    display: block;
+    color: white;
+    letter-spacing: 0.8px;
+    padding: 20px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}

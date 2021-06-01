@@ -1,0 +1,76 @@
+@import "../../styles/colores.scss";
+@import "../../styles/mixins";
+
+.sidebar {
+	@include flex(flex-start, center, initial, initial);
+	background-color: $Gray-7;
+	padding: 40px 0;
+	position: sticky;
+	top: 0px;
+	width: 30%;
+	ul {
+		list-style: none;
+		padding: 0px;
+		.step {
+			@include styleLato(16px, 400, 24px);
+			@include flex(center, flex-start, initial, initial);
+			color: $Gray_3;
+			padding-bottom: 50px;
+			position: relative;
+			transition: all 0.5s;
+			&--number {
+				@include styleLato(12px, 700, 16px);
+				@include flex(center, center, initial, initial);
+				border: 1px solid $Gray_3;
+				border-radius: 30px;
+				color: $Gray-3;
+				height: 24px;
+				margin-right: 16px;
+				width: 24px;
+			}
+			& + .step::before {
+				content: '';
+				position: absolute;
+				width: 1px;
+				height: 40px;
+				border-right: 2px dashed $Gray_3;
+				top: -45px;
+				left: 12px;
+			}
+			&-active {
+				color: $Gray_1_Titulos;
+				.step--number {
+					background-color: $color-purple;
+					border: 1px solid $color-purple;
+					color: white;
+				}
+				& ~ .step-active::before {
+					border-right: 2px dashed $color-purple;
+				}
+			}
+		}
+	}
+	.steps {
+		display: none;
+	}
+}
+
+
+@media (max-width: 40em) {
+	.sidebar {
+		@include flex(center, flex-start, initial, initial);
+		border-bottom: 1px solid #E4E8F7;
+		background-color: #FFF;
+		margin: 0 auto;
+		padding: 12px 32px;
+		position: sticky;
+		top: 64px;
+		width: 100%;
+		ul {
+			display: none;
+		}
+		.steps {
+			@include flex(center, flex-start, initial, initial);
+		}
+	}
+}

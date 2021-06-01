@@ -1,0 +1,35 @@
+@import "../../styles/colores.scss";
+@import "../../styles/mixins";
+
+.minus--and--plus {
+	border: 1px solid #C5CBE0;
+	border-radius: 8px;
+	max-width: 160px;
+	width: 100%;
+	// height: 56px;
+	.input-group-prepend,
+	.input-group-append {
+		@include flex(center, center, initial, initial);
+		border: none;
+		padding: 16px;
+		img {
+			height: 16px;
+			width: 16px;
+		}
+	}
+
+	input {
+		@include styleLato(16px, 400, 24px);
+		color: $Gray_1_Titulos;
+		padding: 16px 0;
+		text-align: center;
+	}
+}
+
+
+/* Responsive */
+@media (max-width: 40em) {
+	.minus--and--plus {
+		max-width: initial;
+	}
+}

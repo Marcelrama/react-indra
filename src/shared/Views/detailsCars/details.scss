@@ -1,0 +1,67 @@
+@import "../../styles/mixins";
+
+.content {
+  &--card {
+    @include flex(initial, initial, initial, initial);
+    border: 3px solid #F0F2FA;
+    border-radius: 12px;
+    max-width: 384px;
+    position: relative;
+    .card--data {
+      padding: 37px 32px;
+      width: 192px;
+      &--number {
+        @include styleRoboto(16px, 400, 20px);
+        color: $Gray-3
+      }
+      &--brand {
+        @include styleLato(20px, 400, 28px);
+        color: $Gray_1_Titulos;
+      }
+      &--edit {
+        @include styleLato(12px, 700, 16px);
+        color: $color-purple;
+        margin-top: 16px;
+        text-transform: uppercase;
+      }
+    }
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .tab {
+    &--titulo {
+      @include styleLato(20px, 400, 28px);
+      color: $Gray_1_Titulos;
+      padding: 16px 0;
+    }
+    &--head {
+      @include flex(initial, initial, initial, initial);
+      max-width: 384px;
+      &--item {
+        @include styleLato(10px, 700, 16px);
+        border-bottom: 1px solid #E4E8F7;
+        color: $Gray_1_Titulos;
+        flex: 1;
+        padding: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        &.active {
+          border-bottom: 2px solid $Red-1-Rimac;
+          color: $Red-1-Rimac;
+        }
+      }
+    }
+    &--content {
+      max-width: 384px;
+      &--item {}
+    }
+  }
+}
+
+.accordeon {
+  padding: 32px 0;
+}

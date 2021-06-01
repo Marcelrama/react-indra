@@ -1,0 +1,36 @@
+@import "../../styles/colores";
+@import "../../styles/estilos-fuentes";
+@import "../../styles/mixins";
+
+.init--page {
+  @include flex(initial, initial, initial, initial);
+  height: 100vh;
+  width: 100%;
+  .login {
+    @include flex(center, center, wrap, column);
+    height: 100%;
+    width: 100%;
+    padding: 40px 0;
+    &--titulo {
+      @include styleLato(28px, 400, 36px);
+      color: $Gray_1_Titulos;
+      margin-bottom: 24px;
+    }
+    .formulario {
+      max-width: 300px;
+      &--checkbox {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 40em) {
+  .init--page {
+    flex-direction: column;
+  }
+}

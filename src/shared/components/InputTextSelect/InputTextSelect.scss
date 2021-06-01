@@ -1,0 +1,34 @@
+@import "../../styles/colores.scss";
+@import "../../styles/mixins";
+
+.input-group {
+	margin-bottom: 1rem;
+	.input-group-prepend {
+		border: none;
+		border-right: 1px solid #ccc;
+		margin-right: initial;
+		button[type="button"] {
+			@include styleLato(16px, 400, 24px);
+			background-color: transparent;
+			border: none;
+			color: $Gray_1_Titulos;
+			padding: 16px;
+			text-transform: uppercase;
+			&::after {
+				color: $Red-1-Rimac;
+			}
+		}
+	}
+	.form-control {
+		border: none;
+		height: initial;
+	}
+}
+
+
+
+
+.input-group-append,
+.input-group-prepend {
+    border: 1px solid $Gray-3;
+}

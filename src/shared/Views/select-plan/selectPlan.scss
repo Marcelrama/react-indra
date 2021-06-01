@@ -1,0 +1,350 @@
+@import "../../styles/colores.scss";
+@import "../../styles/mixins";
+
+.page {
+  @include flex(initial, initial, initial, initial);
+  height: calc(100vh - 64px);
+  width: 100%;
+  .content {
+    height: 100%;
+    width: 70%;
+    padding: 40px 0 40px 96px;
+    &--return {
+      @include flex(center, flex-start, initial, initial);
+      @include styleLato(12px, 400, 16px);
+      cursor: pointer;
+      text-transform: uppercase;
+      img {
+        display: block;
+        height: 24px;
+        width: 24px;
+      }
+      span {
+        color: $Gray-3;
+        margin-left: 16px;
+      }
+    }
+
+    &--titulo {
+      margin: 24px 0;
+      h1 {
+        @include styleLato(40px, 400, 48px);
+        color: $Gray_1_Titulos;
+        span {
+          color: $Red-1-Rimac;
+        }
+      }
+      p {
+        @include styleRoboto(16px, 400, 28px);
+        color: $Gray_2_Paragraph;
+      }
+    }
+
+    &--select {
+      @include flex(flex-start, flex-start, initial, initial);
+      width: 100%;
+      .field-input {
+        max-width: 384px;
+        width: 100%;
+      }
+      .field--help {
+        margin-left: 64px;
+        &--titulo {
+          @include styleLato(12px, 400, 16px);
+          border-bottom: 1px solid #E4E8F7;
+          color: $Gray_1_Titulos;
+          margin-bottom: 16px;
+          padding-bottom: 16px;
+          text-transform: uppercase;
+        }
+        &--aviso {
+          @include flex(flex-start, flex-start, initial, initial);
+          .aviso {
+            max-width: 128px;
+            margin-right: 32px;
+            p {
+              @include styleLato(16px, 400, 24px);
+              color: $Gray_1_Titulos;
+            }
+            a {
+              @include styleLato(10px, 700, 16px);
+              color: $color-purple;
+              text-transform: uppercase;
+            }
+          }
+          img {
+            display: block;
+            width: 64px;
+          }
+        }
+      }
+    }
+
+    &--option {
+      @include flex(center, space-between, initial, initial);
+      border-bottom: 1px solid #E4E8F7;
+      padding: 40px 0;
+      max-width: 384px;
+      width: 100%;
+      p {
+        @include styleLato(16px, 400, 24px);
+        color: $Gray_1_Titulos;
+        margin-bottom: 0
+      }
+      .field--radio {
+        @include flex(center, initial, initial, initial);
+        .input-radio {
+          color: $Gray_1_Titulos;
+          position: relative;
+          & + .input-radio {
+            margin-left: 32px;
+          }
+          input {
+            &:checked,
+            &:not(:checked) {
+              position: absolute;
+              left: -9999px;
+              & + label {
+                @include styleLato(16px, 400, 24px);
+                cursor: pointer;
+                display: inline-block;
+                margin: 0px;
+                padding-left: 28px;
+                position: relative;
+                &::before,
+                &::after {
+                  content: '';
+                  position: absolute;
+                  border-radius: 100%;
+                }
+                &::before {
+                  left: 0;
+                  top: 0;
+                  width: 20px;
+                  height: 20px;
+                  background: #fff;
+                }
+                &::after {
+                  width: 12px;
+                  height: 12px;
+                  background: #43B748;
+                  top: 4px;
+                  left: 4px;
+                  -webkit-transition: all 0.2s ease;
+                  transition: all 0.2s ease;
+                }
+              }
+            }
+            &:checked {
+              & + label {
+                &::before {
+                  border: 1px solid #43B748;
+                }
+                &::after {
+                  opacity: 1;
+                  -webkit-transform: scale(1);
+                  transform: scale(1);
+                }
+              }
+            }
+            &:not(:checked) {
+              & + label {
+                &::before {
+                  border: 1px solid #ddd;
+                }
+                &::after {
+                  opacity: 0;
+                  -webkit-transform: scale(0);
+                  transform: scale(0);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &--price {
+      @include flex(flex-start, space-between, initial, initial);
+      max-width: 384px;
+      padding: 40px 0;
+      width: 100%;
+      .price {
+        p {
+          @include styleLato(16px, 400, 24px);
+          color: $Gray_1_Titulos;
+          margin-bottom: 4px
+        }
+        &--text {
+          @include flex(center, flex-start, initial, initial);
+          p {
+            @include styleLato(12px, 400, 16px);
+            color: $Gray_2_Paragraph;
+          }
+        }
+      }
+    }
+
+    &--btn {
+      width: 192px;
+    }
+
+  }
+  .footer {
+    border-top: 1px solid #E4E8F7;
+    color: $Gray-3;
+    display: none;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 28px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 40em) {
+  .page {
+    flex-direction: column;
+    .content {
+      padding: 40px 0;
+      margin: 0 auto;
+      width: calc(100% - 64px);
+      &--return {
+        display: none;
+      }
+      &--titulo {
+        margin: 0 0 32px;
+        h1 {
+          @include styleLato(28px, 400, 36px);
+        }
+        p {
+          @include styleLato(16px, 400, 28px);
+        }
+      }
+      &--select {
+        @include flex(flex-start, flex-start, initial, column);
+        .field--help {
+          margin: 24px 0 0;
+          width: 100%;
+          &--titulo {
+            display: none;
+          }
+          &--aviso {
+            @include flex(flex-start, flex-end, initial, row-reverse);
+            background-color: $Gray-7;
+            border-radius: 8px;
+            padding: 16px;
+            .aviso {
+              margin: 0 0 0 18px;
+              max-width: fit-content;
+              p {
+                margin-bottom: 0px;
+              }
+              a {
+                line-height: 16px;
+              }
+            }
+            img {
+              height: 48px;
+              width: 48px;
+            }
+          }
+        }
+      }
+      &--option {
+        border-bottom: none;
+        padding: 32px 0;
+      }
+      &--price {
+        @include flex(flex-start, flex-start, initial, column);
+        padding-top: 0;
+        .price {
+          margin-bottom: 16px;
+          width: 100%;
+        }
+      }
+      &--btn {
+        margin-bottom: 16px;
+        width: 100%;
+      }
+    }
+    .footer {
+      display: block;
+    }
+  }
+}
+
+// .select--plan {
+//   &--cars {
+//     background-color: $Gray-7;
+//     margin-top: 20px;
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 20px 0px;
+//     a {
+//       color: $color-purple;
+//     }
+
+//     a:hover {
+//       color: $color-purple;
+//     }
+//   }
+
+//   &--titleCheck {
+//     margin-top: 20px;
+//   }
+
+//   &--check {
+//     margin: 20px 0px;
+//     display: flex;
+//   }
+
+//   &--mountTitle{
+//     margin-top: 20px;
+//   }
+
+//   &--mountNumbers{
+//     margin: 20px 0px;
+//     display: flex;
+//   }
+// }
+
+// .select--plan--sidebar{
+//     display: none;
+// }
+
+// @mixin hide_movil {
+//     .select--plan--progress{
+//         display: none;
+//     } 
+//     .select--plan--sidebar{
+//         display: block;
+//     }
+
+//     .select--plan--cars{
+//         display: none;
+//     }
+
+//     .select--plan--titleCheck{
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       border-bottom: 1px solid $Gray-3;
+//     }
+
+//     .select--plan--mountTitle{
+//       align-items: center;
+//     }
+// }
+
+
+// @media (min-width: 768px) {
+//     @include hide_movil()
+// }
+
+// @media (min-width: 992px) {
+//     @include hide_movil()
+// }
+
+// @media (min-width: 1200px) {
+//     @include hide_movil();
+// }

@@ -1,0 +1,28 @@
+@import "../../styles/colores.scss";
+@import "../../styles/mixins";
+
+.steps {
+  @include flex(center, flex-start, initial, initial);
+  width: 100%;
+  &--img {
+    width: 24px;
+    height: 24px;
+  }
+  &--text {
+    @include styleLato(10px, 700, 16px);
+    color: $Gray_2_Paragraph;
+    letter-spacing: 0.8px;
+    margin: 0 16px 0 12px;
+    max-width: fit-content;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  .progress--bar {
+    width: 100%;
+    &--body {
+      background-color: #E4E8F7;
+      height: 6px;
+    }
+  }
+}

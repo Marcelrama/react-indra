@@ -1,0 +1,73 @@
+@import "../../styles/colores";
+
+.header {
+	background-color: #FFF;
+	border-bottom: 1px solid #E4E8F7;
+	padding: 21px 0;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+	&-login {
+		background-color: transparent;
+		border-bottom: 1px solid transparent;
+		position: fixed;
+	}
+	&--container {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		width: calc(100% - 240px);
+	}
+	&--img {
+		width: 99px;
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	&--data {
+		align-items: center;
+		display: flex;
+		justify-content: flex-end;
+		&--text {
+			color: $Gray_2_Paragraph;
+			font-size: 12px;
+			margin-right: 20px;
+		}
+		&--phone {
+			align-items: center;
+			color: $color-purple;
+			display: flex;
+			font-size: 14px;
+			justify-content: flex-end;
+			span {
+				margin-left: 5px;
+				font-size: 14px
+			}
+		}
+	}
+	
+	.phone--text {
+		display: none;
+	}
+}
+
+@media (max-width: 40em) {
+	.header {
+		position: sticky;
+		&--container {
+			width: 83.5%;
+		}
+		&--data--text {
+			display: none;
+		}
+		.phone--number {
+			display: none;
+		}
+		.phone--text {
+			display: block;
+		}
+	}
+}

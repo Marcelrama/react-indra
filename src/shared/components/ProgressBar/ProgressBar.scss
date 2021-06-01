@@ -1,0 +1,19 @@
+@import "../../styles/colores.scss";
+
+ 
+ .progress--bar {
+    &--body  {
+        height: 20px;
+        width: 100%;
+        background-color: #e0e0de;
+        border-radius: 50px;
+         &--line {
+            height: 100%;
+            background-color: $color-purple;
+            border-radius: inherit;
+        }
+      }
+     
+  }
+
+

@@ -1,0 +1,57 @@
+$roboto-font-path: "../assets/Roboto" !default;
+
+$font-roboto--black: roboto--Boldest;
+$font-roboto--bold: roboto--bold;
+$font-roboto--normal: roboto--normal;
+$font-roboto--lighter: roboto--lighter;
+$font-roboto--Lightest: roboto--Lightest;
+
+@font-face {
+  font-family: roboto--Lightest;
+  font-style: normal;
+  font-weight: 100;
+  src: url("#{$roboto-font-path}/Roboto-normal-100.ttf") format("truetype"),
+    url("#{$roboto-font-path}/Roboto-normal-100.woff") format("woff"),
+    url("#{$roboto-font-path}/Roboto-normal-100.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: roboto--lighter;
+  font-style: normal;
+  font-weight: 300;
+  src: url("#{$roboto-font-path}/Roboto-normal-300.ttf") format("truetype"),
+    url("#{$roboto-font-path}/Roboto-normal-300.woff") format("woff"),
+    url("#{$roboto-font-path}/Roboto-normal-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: roboto--normal;
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$roboto-font-path}/Roboto-normal-400.eot");
+  src: local("Roboto"),
+    url("#{$roboto-font-path}/Roboto-normal-400.ttf") format("truetype"),
+    url("#{$roboto-font-path}/Roboto-normal-400.woff") format("woff"),
+    url("#{$roboto-font-path}/Roboto-normal-400.svg#Roboto") format("svg"),
+    url("#{$roboto-font-path}/Roboto-normal-400.eot?#iefix")
+      format("embedded-opentype"),
+    url("#{$roboto-font-path}/Roboto-normal-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: roboto--bold;
+  font-style: normal;
+  font-weight: 700;
+  src: url("#{$roboto-font-path}/Roboto-normal-700.ttf") format("truetype"),
+    url("#{$roboto-font-path}/Roboto-normal-700.woff") format("woff"),
+    url("#{$roboto-font-path}/Roboto-normal-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: roboto--Boldest;
+  font-style: normal;
+  font-weight: 900;
+  src: url("#{$roboto-font-path}/Roboto-normal-900.ttf") format("truetype"),
+    url("#{$roboto-font-path}/Roboto-normal-900.woff") format("woff"),
+    url("#{$roboto-font-path}/Roboto-normal-900.woff2") format("woff2");
+}
